@@ -1,0 +1,8 @@
+fastapi>=0.115
+uvicorn>=0.30
+SQLAlchemy>=2.0
+PyMySQL>=1.1
+openai>=1.40
+imapclient>=2.3
+beautifulsoup4>=4.12
+python-dateutil>=2.9
