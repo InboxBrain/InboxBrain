@@ -1,0 +1,69 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.pytype/
+.tox/
+.nox/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# === Virtual Envs ===
+.venv/
+venv/
+env/
+.venv*/
+.python-version
+
+# === Environment files ===
+.env
+.env.*
+!.env.example
+.envrc
+
+# === Logs ===
+logs/
+*.log
+
+# === Build / Dist ===
+build/
+dist/
+
+# === Editors / IDE ===
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+Icon?
+
+# === Docker overrides (local only) ===
+docker-compose.override.yml
+
+# === Data & Attachments (optional large files) ===
+attachments/
+data/
+db/backups/
+db/*.dump.sql
+!db/schema.sql  # keep the canonical schema in version control
+
+# === Artifacts ===
+*.zip
+*.tar
+*.tar.gz
+*.tgz

@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: inboxbrain-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: inboxbrain
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+
+  app:
+    build: ./services/app
+    container_name: inboxbrain-app
+    env_file: .env
+    depends_on:
+      - mysql
+    command: ["/bin/bash", "/app/entrypoint.sh"]
+    volumes:
+      - ./logs:/app/logs
+    ports:
+      - "8000:8000"
+
+volumes:
+  dbdata:
