@@ -35,8 +35,8 @@ else
   uvicorn api:app --host 0.0.0.0 --port 8000 &
   while true; do
      python run_ingestor_imap.py || true
-     sleep 60
+     sleep 120
      python run_worker_ai.py || true
-     sleep 30
+     sleep 20
   done
 fi
